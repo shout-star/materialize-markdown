@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/split-pane.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/codemirror.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/github-markdown.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/emojify.min.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="js/highlight/styles/github.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Materialized Design Markdown Editor</title>
+	</head>
+	<body>
+		<nav>
+			<div id="nav_toolbar" class="nav-wrapper">
+				<span class="brand-logo">
+					<img src="images/app.png" width="64" align="top" />
+					<span class="hide-on-small-and-down description">Materialized Design Markdown Editor</span>
+				</span>
+				<ul id="nav-mobile" class="right">
+					<li><a v-on:click.stop.prevent="load">Load</a></li>
+					<li><a v-on:click.stop.prevent="save">Save</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="split-container">
+			<div id="editor" class="split-pane fixed-left">
+				<div id="left-component" class="split-pane-component">
+					<textarea id="editor_textarea" class="materialize-textarea" v-model="input"></textarea>
+				</div>
+				<div class="split-pane-divider"></div>
+				<div id="right-component" class="split-pane-component markdown-body" v-html="input | marked"></div>
+			</div>
+		</div>
+		<footer id="footer" class="page-footer">
+			<div class="footer-copyright">
+				<div v-html="currentPath"></div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/hammer.min.js"></script>
+		<script type="text/javascript" src="js/codemirror.js"></script>
+		<script type="text/javascript" src="js/codemirror/addon/edit/continuelist.js"></script>
+		<script type="text/javascript" src="js/codemirror/mode/markdown/markdown.js"></script>
+		<script type="text/javascript" src="js/codemirror/mode/gfm/gfm.js"></script>
+		<script type="text/javascript" src="js/markdown-it.min.js"></script>
+		<script type="text/javascript" src="js/emojify.min.js"></script>
+		<script type="text/javascript" src="js/highlight/highlight.pack.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/split-pane.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript" src="js/editor.js"></script>
+	</body>
+</html>

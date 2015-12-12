@@ -1,0 +1,60 @@
+/*!
+main.css
+*/
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.split-container {
+	height: 100%;
+}
+.split-pane-divider {
+	background: #aaa;
+	left: 50%; /* Same as left component width */
+	width: 5px;
+}
+#left-component {
+	width: 50%;
+}
+#right-component {
+	left: 50%;  /* Same as left component width */
+	float: left;
+	margin-left: 5px;  /* Same as divider width */
+}
+#nav_toolbar a {
+	cursor: pointer;
+}
+#nav_toolbar .description {
+	font-size: 20px;
+}
+#footer {
+	margin-top: 5px;
+	padding-top: 0px;
+}
+#footer .footer-copyright {
+	line-height: 1.5;
+    height: 25px;
+}
+
+/* editor setting */
+.cm-header-1 { font-size: 2em; }
+.cm-header-2 { font-size: 1.75em; }
+.cm-header-3 { font-size: 1.5em; }
+.cm-header-4 { font-size: 1.3em; }
+.cm-header-5 { font-size: 1.2em; }
+.cm-header-6 { font-size: 1.15em; }
+
+.CodeMirror {
+  width: auto;
+  height: auto;
+}
+
+/* Markdown preview */
+.markdown-body ul li {
+    list-style-type: initial;
+}
+
+
+
+
