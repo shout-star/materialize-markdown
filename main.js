@@ -1,9 +1,8 @@
 'use strict';
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
+const {app, BrowserWindow} = require('electron');
 
-require('crash-reporter').start();
+// crashReporter.start();
 
 var mainWindow = null;
 
@@ -20,7 +19,7 @@ app.on('ready', function() {
     height: 768,
     title: "Materialized Design Markdown Editor",
   });
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
